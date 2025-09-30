@@ -1,0 +1,32 @@
+# databricks.yml
+# This is the main configuration file for your Databricks Asset Bundle.
+
+bundle:
+  name: data-transfer-bundle
+
+# The 'include' section tells the bundle which files to package.
+# We need to include the notebook so it can be referenced by the jobs.
+include:
+  - src/notebooks/data_transfer.ipynb
+
+# The 'targets' section defines your different environments.
+targets:
+  # The 'dev' target is for development.
+  dev:
+    # The git_source is defined at the target level.
+    # This configuration will apply to all resources deployed to this target.
+    git_source:
+      git_url: "https://<your-git-repo-url>" # <-- TODO: Replace with your repository URL
+      git_provider: "gitHub" # or your git provider
+      git_branch: "dev"
+    resources:
+      - file: resources/databricks_dev.yml
+
+  # The 'prod' target is for production.
+  prod:
+    git_source:
+      git_url: "https://<your-git-repo-url>" # <-- TODO: Replace with your repository URL
+      git_provider: "gitHub" # or your git provider
+      git_branch: "main"
+    resources:
+      - file: resources/databricks_prod.yml

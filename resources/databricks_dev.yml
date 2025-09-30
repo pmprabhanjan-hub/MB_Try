@@ -1,0 +1,12 @@
+# resources/databricks_dev.yml
+# This file defines the resources for the 'dev' target.
+# It includes the configuration for the development job.
+
+resources:
+  jobs:
+    Data_transfer_Job:
+      name: "Data_transfer_Job (Dev)"
+      tasks:
+        - task_key: "data_transfer_task"
+          notebook_task:
+            notebook_path: "src/notebooks/data_transfer.ipynb"

@@ -1,0 +1,12 @@
+# resources/databricks_prod.yml
+# This file defines the resources for the 'prod' target.
+# It includes the configuration for the production job.
+
+resources:
+  jobs:
+    Data_transfer_Job:
+      name: "Data_transfer_Job (Prod)"
+      tasks:
+        - task_key: "data_transfer_task"
+          notebook_task:
+            notebook_path: "src/notebooks/data_transfer.ipynb"
