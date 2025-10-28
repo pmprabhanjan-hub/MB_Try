@@ -9,4 +9,4 @@ resources:
       tasks:
         - task_key: "data_transfer_task"
           notebook_task:
-            notebook_path: "src/notebooks/data_transfer.ipynb"
+            notebook_path: "src/notebooks/hello_world.ipynb"
