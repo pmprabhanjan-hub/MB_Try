@@ -7,7 +7,7 @@ bundle:
 # The 'include' section tells the bundle which files to package.
 # We need to include the notebook so it can be referenced by the jobs.
 include:
-  - src/notebooks/data_transfer.ipynb
+  - src/notebooks/hello_world.ipynb
 
 # The 'targets' section defines your different environments.
 targets:
